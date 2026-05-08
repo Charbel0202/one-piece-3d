@@ -1,9 +1,19 @@
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Environment, Float, OrbitControls } from "@react-three/drei";
+import { Book } from "./Book";
+
 export const Experience = () => {
   return (
     <>
+      {/* <Float
+        floatIntensity={1}
+        speed={2}
+        rotationIntensity={2}
+      >
+        <Book />
+      </Float> */}
+        <Book />
       <OrbitControls />
-      <Environment preset="studio"></Environment>
+      <Environment preset="studio" />
       <directionalLight
         position={[2, 5, 2]}
         intensity={2.5}

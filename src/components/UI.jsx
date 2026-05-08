@@ -1,28 +1,29 @@
 import { atom, useAtom } from "jotai";
+import { useEffect } from "react";
 
 const pictures = [
-  "DSC00680",
-  "DSC00933",
-  "DSC00966",
-  "DSC00983",
-  "DSC01011",
-  "DSC01040",
-  "DSC01064",
-  "DSC01071",
-  "DSC01103",
-  "DSC01145",
-  "DSC01420",
-  "DSC01461",
-  "DSC01489",
-  "DSC02031",
-  "DSC02064",
-  "DSC02069",
+  "luffy",
+  "zorro",
+  "sanji",
+  "jinbe",
+  "robin",
+  "brook",
+  "nami",
+  "usopp",
+  "franky",
+  "chopper",
+  "vivi",
+  "yamato",
+  "carrot",
+  "Pedro",
+  "bartolomeo",
+  "fin",
 ];
 
 export const pageAtom = atom(0);
 export const pages = [
   {
-    front: "book-cover",
+    front: "onepiece",
     back: pictures[0],
   },
 ];
@@ -41,6 +42,11 @@ pages.push({
 export const UI = () => {
   const [page, setPage] = useAtom(pageAtom);
 
+  useEffect(() => {
+    const audio = new Audio("/audios/page-flip-01a.mp3");
+    audio.play();
+  })
+
   return (
     <>
       <main className=" pointer-events-none select-none z-10 fixed  inset-0  flex justify-between flex-col">
@@ -48,7 +54,7 @@ export const UI = () => {
           className="pointer-events-auto mt-10 ml-10"
           href="https://lessons.wawasensei.dev/courses/react-three-fiber"
         >
-          <img className="w-20" src="/images/wawasensei-white.png" />
+          <img className="w-20" src="/images/logo_simple__1_-removebg-preview.png" />
         </a>
         <div className="w-full overflow-auto pointer-events-auto flex justify-center">
           <div className="overflow-auto flex items-center gap-4 max-w-full p-10">
@@ -83,56 +89,32 @@ export const UI = () => {
         <div className="relative">
           <div className="bg-white/0  animate-horizontal-scroll flex items-center gap-8 w-max px-8">
             <h1 className="shrink-0 text-white text-10xl font-black ">
-              Wawa Sensei
+              Charbel HOUNZA
             </h1>
-            <h2 className="shrink-0 text-white text-8xl italic font-light">
-              React Three Fiber
-            </h2>
             <h2 className="shrink-0 text-white text-12xl font-bold">
               Three.js
             </h2>
             <h2 className="shrink-0 text-transparent text-12xl font-bold italic outline-text">
-              Ultimate Guide
+              One piece
             </h2>
             <h2 className="shrink-0 text-white text-9xl font-medium">
-              Tutorials
-            </h2>
-            <h2 className="shrink-0 text-white text-9xl font-extralight italic">
-              Learn
-            </h2>
-            <h2 className="shrink-0 text-white text-13xl font-bold">
-              Practice
-            </h2>
-            <h2 className="shrink-0 text-transparent text-13xl font-bold outline-text italic">
-              Creative
+              3D practice
             </h2>
           </div>
-          <div className="absolute top-0 left-0 bg-white/0 animate-horizontal-scroll-2 flex items-center gap-8 px-8 w-max">
+          {/* <div className="bg-white/0  animate-horizontal-scroll flex items-center gap-8 w-max px-8">
             <h1 className="shrink-0 text-white text-10xl font-black ">
-              Wawa Sensei
+              Charbel HOUNZA
             </h1>
-            <h2 className="shrink-0 text-white text-8xl italic font-light">
-              React Three Fiber
-            </h2>
             <h2 className="shrink-0 text-white text-12xl font-bold">
               Three.js
             </h2>
             <h2 className="shrink-0 text-transparent text-12xl font-bold italic outline-text">
-              Ultimate Guide
+              One piece
             </h2>
             <h2 className="shrink-0 text-white text-9xl font-medium">
-              Tutorials
+              3D practice
             </h2>
-            <h2 className="shrink-0 text-white text-9xl font-extralight italic">
-              Learn
-            </h2>
-            <h2 className="shrink-0 text-white text-13xl font-bold">
-              Practice
-            </h2>
-            <h2 className="shrink-0 text-transparent text-13xl font-bold outline-text italic">
-              Creative
-            </h2>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
